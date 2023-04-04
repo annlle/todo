@@ -5,16 +5,10 @@ const RefreshTokenError = require('./errors/RefreshTokenError');
 const EmptyUserError = require('./errors/EmptyUserError');
 
 module.exports.errorHandler = async(err, req, res, next) => {
-<<<<<<< HEAD
-    if(err instanceof EmptyUserError){
-        return res.status(400).send({error: err.message});
-    }
-=======
     if(err instanceof EmptyUserError) {
         return res.status(400).send({error: err.message});
     }
 
->>>>>>> ebbd5f85a4a1dac7ab38882e320b410f0a448508
     if(err instanceof ValidationError) {
         return res.status(400).send({error: err.message});
     }
